@@ -1,0 +1,77 @@
+table {
+  width: 10cm;
+  border-spacing: 0;
+  border: 1px black solid;
+}
+
+td {
+  border: 1px black solid;
+}
+
+.pack_address {
+  font-size: 60px;
+}
+
+.jadlog_header {
+  text-align: center;
+  width: 8.3cm !important;
+  height: 0.6cm;
+  font-size: 10px;
+}
+
+.jadlog_package_address {
+  text-align: center;
+  width: 1.5cm !important ;
+  height: 3.1cm !important;
+  font-size: 50px;
+}
+
+.jadlog_sender_data {
+  width: 1.5cm;
+  height: 3.1cm;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-size: 8px;
+  text-align: left;
+}
+
+.customer_address {
+  width: 6.3cm;
+  height: 2.3cm;
+  font-size: 12px;
+}
+
+.customer_contact_info {
+  width: 5.2cm;
+  height: 1.9cm;
+  border: black 1px solid;
+}
+
+.package_data {
+  width: 1.6cm;
+  height: 1.9cm;
+  font-size: 15px;
+}
+
+.destiny_unit {
+  width: 5.2cm;
+  height: 1.9cm;
+}
+
+.package_priority {
+  width: 1.6cm;
+  height: 1.9cm;
+  font-size: 60px;
+  text-align: center;
+}
+
+.shipment_id_barcode {
+  width: 1.5cm;
+  height: 6.7cm;
+}
+
+.package_identification {
+  width: 9.8cm;
+  height: 4.2cm;
+  border: black 1px solid;
+}

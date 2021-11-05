@@ -1,0 +1,81 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="label.css" media="screen" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    <script>
+      async function savePDF() {
+        var item = document.getElementById('content');
+        html2canvas(item, {
+          onrendered: function (canvas) {
+            alert('foi');
+            document.body.appendChild(canvas);
+          },
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <div id="content" name="content">
+      <table class="main_section">
+        <tr>
+          <td class="jadlog_header" rowspan="2" colspan="12">
+            <strong>JADLOG - DPD GROUP</strong><br />
+            <span
+              >35.1809.04.004.002/0001-35-57-000-021-453-996-121.453.996-5</span
+            >
+          </td>
+          <td rowspan='8' class='shipment_id_barcode'></td>
+        </tr>
+        <tr></tr>
+        <tr>
+          <td class="customer_address" rowspan="2" colspan="8">
+            JADLOG LOGISTICA S.A. BA<br />
+            R GERINO DE SOUZA FILHO 22<br />
+            ITINGA<br />
+            42700000 LAURO DE FREITAS
+          </td>
+          <td colspan="2" rowspan="3" class="jadlog_package_address">
+              C<br />
+              13
+          </td>
+        </tr>
+        <tr></tr>
+        <tr>
+          <td colspan="6" rowspan="2" class="customer_address">
+            João Customer<br />
+            (11) 99999-9999<br />
+            Rua sem saída, portão branco<br />
+          </td>
+          <td colspan="2" rowspan="2" class="package_data">
+            <strong>Package</strong><br />
+            001/001 <br />
+            <strong>Weight</strong><br />
+            0.10 <br />
+          </td>
+        </tr>
+        <tr>
+          <td rowspan="3" class="jadlog_sender_data">
+              JADLOG LOGISTICA S.A. BA<br />
+              R GERINO DE SOUZA FILHO 22<br />
+              ITINGA<br />
+              42700000 LAURO DE FREITAS
+              <br />
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td rowspan="2" colspan="6" class='destiny_unit'>
+            FL JAD SALVADOR<br />
+            10080010761001 1<br />
+          </td>
+          <td colspan="2" rowspan="2" class='package_priority'>3</td>
+        </tr>
+  <tr></tr>
+          <tr>
+              <td colspan='13' class='package_identification'></td>
+          </tr>
+      </table>
+    </div>
+    <!-- <button onClick="savePDF()">Run Code</button> -->
+  </body>
+</html>

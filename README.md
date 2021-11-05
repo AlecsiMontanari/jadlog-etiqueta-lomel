@@ -1,1 +1,0 @@
-# jadlog-etiqueta-lomel
