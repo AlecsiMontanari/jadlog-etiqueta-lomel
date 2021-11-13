@@ -36,9 +36,8 @@
         },
       };
 
-      function code128(code, height, allSpace, barcodeType, showNumbers) {
-        if (barcodeType == undefined) barcodeType = code128Detect(code);
-        if (allSpace == undefined) allSpace = 180;
+      function code128(code, height, showNumbers) {
+        var barcodeType = code128Detect(code);
         if (barcodeType == 'C' && code.length % 2 == 1) code = '0' + code;
 
         var a = parseBarcode(code, barcodeType);
@@ -62,8 +61,6 @@
             codeBarSpace +
             (parseInt(b.charAt(pos + 1)) + parseInt(b.charAt(pos)));
         }
-
-        var margin = (parseInt(allSpace) - codeBarSpace) / 2;
 
         if (showNumbers) {
           return (
@@ -123,26 +120,21 @@
 
     <script>
       function addBarCodes(codebar1, codebar2) {
-        var barCode1 = code128(codebar1, '1.8cm', '180', undefined, true);
-        var barCode2 = code128(codebar2, '1.1cm', '180', 'A', false);
+        var barCode1 = code128(codebar1, '1.8cm', true);
+        var barCode2 = code128(codebar2, '1.1cm', false);
         document.getElementById('barcode-1').innerHTML = barCode1;
         document.getElementById('barcode_2').innerHTML = barCode2;
-        setTimeout(function () {
-          // window.print();
-        }, 1000);
       }
     </script>
 
     <style>
-      div {
-        border: 1px black solid;
-      }
-
       .pack_address {
+        border: 1px black solid;
         font-size: 60px;
       }
 
       .jadlog_header {
+        border: 1px black solid;
         text-align: center;
         width: 8.3cm !important;
         height: 0.6cm;
@@ -151,6 +143,7 @@
       }
 
       .jadlog_package_address {
+        border: 1px black solid;
         text-align: center;
         width: 1.44cm !important ;
         height: 3.1cm !important;
@@ -163,6 +156,7 @@
       }
 
       .jadlog_sender_data {
+        border: 1px black solid;
         border-left: none;
         border-top: none;
         border-right: none;
@@ -180,6 +174,7 @@
       }
 
       .customer_address {
+        border: 1px black solid;
         width: 6.8cm;
         height: 2.3cm;
         font-size: 12px;
@@ -188,6 +183,7 @@
       }
 
       .customer_contact_info {
+        border: 1px black solid;
         width: 5.2cm;
         height: 1.9cm;
         position: absolute;
@@ -197,6 +193,7 @@
       }
 
       .package_data {
+        border: 1px black solid;
         width: 1.6cm;
         height: 1.9cm;
         font-size: 15px;
@@ -209,6 +206,7 @@
       }
 
       .destiny_unit {
+        border: 1px black solid;
         width: 5.2cm;
         height: 1.9cm;
         position: absolute;
@@ -228,11 +226,11 @@
       }
 
       .package_identification {
+        border: black 1px solid;
         position: absolute;
         top: 7cm;
         width: 9.9cm;
         height: 4.2cm;
-        border: black 1px solid;
         vertical-align: top;
       }
 
@@ -245,8 +243,8 @@
       }
 
       .priority {
-        font-size: 10px;
         border: black 1px solid;
+        font-size: 10px;
         padding: 5px;
         width: fit-content;
       }
@@ -318,6 +316,7 @@
         border: none;
       }
       .barcode-2 {
+        border: 1px black solid;
         padding-top: 2px;
         width: 6.7cm !important;
         height: 1.5cm !important;
@@ -345,7 +344,9 @@
       }
     </style>
   </head>
-  <body onLoad="addBarCodes('4270000003966600000525000001', '06601100005617')">
+  <body
+    onLoad="addBarCodes('$4270000003966600000525000001', '06041401151226$001')"
+  >
     <div class="jadlog_header">
       <strong>JADLOG - DPD GROUP</strong><br />
       <span>35.1809.04.004.002/0001-35-57-000-021-453-996-121.453.996-5</span>
